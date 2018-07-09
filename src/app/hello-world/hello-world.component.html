@@ -9,9 +9,9 @@
     </button>
   </li>
 </ul>
-
+<input [(ngModel)]="courseTitle"/>
 <button
   class="btn btn-success"
-  (click)="addCourse('New Course')">
+  (click)="addCourse(courseTitle)">
   Add Course
 </button>

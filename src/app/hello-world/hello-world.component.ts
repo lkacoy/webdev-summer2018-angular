@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloWorldComponent implements OnInit {
 
+  courseTitle;
   message = 'Hello from Hello World Component!';
   courses = [
     {title: 'CS5200', id: 123},
@@ -27,13 +28,13 @@ export class HelloWorldComponent implements OnInit {
           course.id !== courseId);
   }
 
-  addCourse(courseTitle) {
+  addCourse(title) {
     const largestId = Math.max.apply(
       Math, this.courses.map(
         function(course){
           return course.id; }))
     this.courses.push(
-      {title: courseTitle, id: largestId + 1}
+      {title: title, id: largestId + 1}
     );}
 
 }
