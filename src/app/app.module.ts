@@ -21,7 +21,7 @@ import { CourseGridComponent } from './course-grid/course-grid.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+
   ],
   providers: [CourseNavigatorServiceClient, CourseServiceClient],
   bootstrap: [AppComponent]
