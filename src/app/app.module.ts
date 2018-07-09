@@ -8,13 +8,15 @@ import {CourseNavigatorServiceClient} from "./services/course-navigator.service.
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { WhiteBoardComponent } from './white-board/white-board.component';
 import {CourseServiceClient} from "./services/course.service.client";
+import { CourseGridComponent } from './course-grid/course-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
     CourseNavigatorComponent,
-    WhiteBoardComponent
+    WhiteBoardComponent,
+    CourseGridComponent
 
   ],
   imports: [
