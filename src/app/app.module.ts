@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { SectionListComponent } from './section-list/section-list.component';
+import { WidgetListComponent } from './widget-list/widget-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SectionListComponent } from './section-list/section-list.component';
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    SectionListComponent
+    SectionListComponent,
+    WidgetListComponent
 
   ],
   imports: [
