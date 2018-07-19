@@ -16,6 +16,7 @@ import {ModuleServiceClient} from "./services/module.service.client";
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import {LessonServiceClient} from "./services/lesson.service.client";
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     CourseViewerComponent,
     ModuleListComponent,
     LessonTabsComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
 
   ],
   imports: [
