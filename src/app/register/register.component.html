@@ -1,21 +1,26 @@
-<div class="container-fluid">
+<div class="container">
   <h1>Register</h1>
 
-  <input [(ngModel)]="username"
+  <input [(ngModel)]="username" required
          placeholder="username"
-         class="form-control"/>
-  <input [(ngModel)]="password"
+         class="form-control mb-2 mt-4"/>
+  <input [(ngModel)]="password" required
+         type="password"
          placeholder="password"
-         class="form-control"/>
-  <input [(ngModel)]="password2"
+         class="form-control mb-2"/>
+  <input [(ngModel)]="password2" required
+         type="password"
          placeholder="verify password"
-         class="form-control"/>
+         class="form-control mb-2"/>
+  <small id="passwordsDoNotMatch" class="text-danger" [hidden]="!this.showError">
+    Passwords do not match. Please try again.
+  </small>
   <button (click)="register(username, password, password2)"
           class="btn btn-primary btn-block">
     Register
   </button>
 
   <a routerLink="/login">Login</a>
-  <a routerLink="/home">Home</a>
+  <a routerLink="/home" class="ml-2">Home</a>
 
 </div>

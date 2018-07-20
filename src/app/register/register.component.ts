@@ -15,7 +15,13 @@ export class RegisterComponent implements OnInit {
   username;
   password;
   password2;
+  showError:boolean = false;
+
   register(username, password, password2) {
+    if (password !== password2) {
+      this.showError = true;
+      return;
+    }
     this.service
       .createUser(username, password)
       .then(() =>
