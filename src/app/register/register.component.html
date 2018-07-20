@@ -12,8 +12,11 @@
          type="password"
          placeholder="verify password"
          class="form-control mb-2"/>
-  <small id="passwordsDoNotMatch" class="text-danger" [hidden]="!this.showError">
+  <small id="passwordsDoNotMatch" class="text-danger" [hidden]="!this.passwordMatchError">
     Passwords do not match. Please try again.
+  </small>
+  <small id="usernameTaken" class="text-danger" [hidden]="!this.usernameTakenError">
+    Username has already been taken. Please try a new username.
   </small>
   <button (click)="register(username, password, password2)"
           class="btn btn-primary btn-block">
