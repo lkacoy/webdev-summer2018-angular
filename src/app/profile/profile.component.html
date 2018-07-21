@@ -29,5 +29,6 @@
 
   <a (click)="logout()">Logout</a>
   <a routerLink="/home" class="ml-2">Home</a>
+  <a routerLink="/admin" class="ml-2" [hidden]="!this.isAdmin">Admin</a>
 
 </div>
