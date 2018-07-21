@@ -17,6 +17,12 @@ export class UserServiceClient {
       headers: {
         'content-type': 'application/json'
       }
+    }).then(response => {
+      if (response != null) {
+        return response.json()
+      }else {
+        return;
+      }
     });
   }
 
