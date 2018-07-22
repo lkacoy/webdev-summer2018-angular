@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserServiceClient} from "../services/user.service.client";
 import {Router} from "@angular/router";
 import {SectionServiceClient} from "../services/section.service.client";
+import {User} from "../models/user.model.client";
 
 @Component({
   selector: 'app-profile',
@@ -14,14 +15,23 @@ export class ProfileComponent implements OnInit {
               private sectionService: SectionServiceClient,
               private router: Router) { }
 
-  user = {};
+  user:User = new User();
   username;
   password;
+  email;
+  firstName;
+  lastName;
   sections = [];
   isAdmin:boolean = false;
 
-  update(user) {
-    console.log(user);
+  update() {
+    this.user.username = this.username;
+    this.user.password = this.password;
+    this.user.email = this.email;
+    this.user.firstName = this.firstName;
+    this.user.lastName = this.lastName;
+    this.service.updateUser(this.user)
+      .then(user => this.user = user);
   }
 
   logout() {

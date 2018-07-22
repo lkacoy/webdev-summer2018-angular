@@ -10,4 +10,9 @@ export class CourseNavigatorServiceClient {
     return fetch('https://web2018-lexikacoyannakis.herokuapp.com/api/course/' + courseId + '/module')
       .then(response => response.json());
   }
+
+  findAllSectionsForCourse(courseId) {
+    return fetch('http://localhost:4000/api/course/' + courseId+ '/section')
+      .then(response => response.json());
+  }
 }
