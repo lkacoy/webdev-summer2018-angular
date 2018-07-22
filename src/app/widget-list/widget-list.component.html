@@ -23,7 +23,7 @@
       <div *ngSwitchCase="'List'">
         <ul class="list-group">
           <li class="list-group-item"
-              *ngFor="let item of widget.listItem.split('\n')">
+              *ngFor="let item of widget.listItems.split('\n')">
             {{item}}
           </li>
         </ul>
