@@ -15,4 +15,13 @@ export class CourseNavigatorServiceClient {
     return fetch('http://localhost:4000/api/course/' + courseId+ '/section')
       .then(response => response.json());
   }
+
+  removeSection(sectionId) {
+    return fetch('http://localhost:4000/api/section/' + sectionId, {
+      method: 'delete',
+      headers: {
+        'content-type': 'application/json'
+      }
+    });
+  }
 }

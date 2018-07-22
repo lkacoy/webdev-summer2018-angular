@@ -12,6 +12,7 @@ export class CourseNavigatorComponent implements OnInit {
   courses = [];
   modules = [];
   sections = [];
+  courseId;
 
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class CourseNavigatorComponent implements OnInit {
   }
 
   selectCourse(courseId) {
+    this.courseId = courseId;
     this.service.findAllModulesForCourses(courseId)
       .then(modules =>this.modules = modules);
   }
@@ -31,6 +33,10 @@ export class CourseNavigatorComponent implements OnInit {
 
   removeSection(sectionId) {
     console.log(sectionId);
+    this.service.removeSection(sectionId)
+      .then(() => {
+        this.findSectionsForCourse(this.courseId);
+      })
   }
 
 }
