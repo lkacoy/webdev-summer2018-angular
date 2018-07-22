@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CourseNavigatorServiceClient} from "../services/course-navigator.service.client";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-course-navigator',
@@ -10,7 +10,8 @@ import {ActivatedRoute} from "@angular/router";
 export class CourseNavigatorComponent implements OnInit {
 
   constructor(private service:CourseNavigatorServiceClient,
-              private route:ActivatedRoute) {
+              private route:ActivatedRoute,
+              private router:Router) {
     this.route.params.subscribe( params => this.setParams(params));
   }
   courses = [];
@@ -37,6 +38,7 @@ export class CourseNavigatorComponent implements OnInit {
   findSectionsForCourse(courseId) {
     this.service.findAllSectionsForCourse(courseId)
       .then(sections => this.sections = sections);
+    this.router.navigateByUrl('/admin/course/' + courseId)
   }
 
   removeSection(sectionId) {
