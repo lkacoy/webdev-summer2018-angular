@@ -41,7 +41,6 @@ import { EnrollComponent } from './enroll/enroll.component';
     RegisterComponent,
     ProfileComponent,
     SectionListComponent,
-    AdminComponent,
     EnrollComponent
   ],
   imports: [
