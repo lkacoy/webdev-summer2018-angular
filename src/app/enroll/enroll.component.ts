@@ -30,12 +30,13 @@ export class EnrollComponent implements OnInit {
   enroll(section) {
     if (section.seats == 0) {
       alert('You can not enroll because the section is at full capacity.');
+    } else {
+      this.service
+        .enrollStudentInSection(section._id)
+        .then(() => {
+          this.router.navigate(['profile']);
+        });
     }
-    this.service
-      .enrollStudentInSection(section._id)
-      .then(() => {
-        this.router.navigate(['profile']);
-      });
   }
 
   loadSections(courseId) {
