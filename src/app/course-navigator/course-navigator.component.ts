@@ -18,6 +18,7 @@ export class CourseNavigatorComponent implements OnInit {
   modules = [];
   sections = [];
   courseId;
+  sectionId;
 
 
   ngOnInit() {
@@ -27,6 +28,16 @@ export class CourseNavigatorComponent implements OnInit {
 
   setParams(params) {
     this.courseId = params['courseId'];
+    this.sectionId = params['sectionId'];
+
+    if (this.courseId) {
+      this.findSectionsForCourse(this.courseId);
+    }
+
+    if (this.sectionId) {
+      console.log(this.sectionId);
+    }
+
   }
 
   selectCourse(courseId) {
@@ -38,7 +49,9 @@ export class CourseNavigatorComponent implements OnInit {
   findSectionsForCourse(courseId) {
     this.service.findAllSectionsForCourse(courseId)
       .then(sections => this.sections = sections);
-    this.router.navigateByUrl('/admin/course/' + courseId)
+    if (this.router.url === '/admin') {
+      this.router.navigateByUrl('/admin/course/' + courseId);
+    }
   }
 
   removeSection(sectionId) {
