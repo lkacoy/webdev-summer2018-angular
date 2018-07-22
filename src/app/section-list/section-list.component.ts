@@ -10,21 +10,22 @@ import {SectionServiceClient} from "../services/section.service.client";
 export class SectionListComponent implements OnInit {
 
   constructor(private service: SectionServiceClient,
-              private router: Router,
               private route: ActivatedRoute) {
-    this.route.params.subscribe(params => this.loadSections(params['courseId']))
+    this.route.params.subscribe(params => this.loadSectionInfo(params['courseId'], params['sectionId']))
   }
 
   sectionName = '';
   seats = '';
   courseId = '';
-  sections = [];
-  loadSections(courseId) {
-    this.courseId = courseId;
+
+  loadSectionInfo(courseId, sectionId) {
     this
       .service
-      .findSectionsForCourse(courseId)
-      .then(sections => this.sections = sections);
+      .findSectionInfo(sectionId)
+      .then(section => {
+        this.sectionName = section.name;
+        this.seats = section.seats;
+      });
   }
 
   createSection(sectionName, seats) {
@@ -32,7 +33,7 @@ export class SectionListComponent implements OnInit {
       .service
       .createSection(this.courseId, sectionName, seats)
       .then(() => {
-        this.loadSections(this.courseId);
+        this.loadSectionInfo(this.courseId, this.route.params['sectionId']);
       });
   }
 

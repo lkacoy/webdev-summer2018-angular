@@ -34,4 +34,9 @@ export class SectionServiceClient {
       }
     });
   }
+
+  findSectionInfo(sectionId) {
+    return fetch('http://localhost:4000/api/section/' + sectionId)
+      .then(response => response.json());
+  }
 }
