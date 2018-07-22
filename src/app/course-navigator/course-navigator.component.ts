@@ -55,11 +55,16 @@ export class CourseNavigatorComponent implements OnInit {
   }
 
   removeSection(sectionId) {
-    console.log(sectionId);
     this.service.removeSection(sectionId)
       .then(() => {
         this.findSectionsForCourse(this.courseId);
       })
+  }
+
+  addSection(courseId) {
+    var section = {name: courseId, courseId: courseId};
+    this.service.addSection(courseId, section)
+      .then(() => this.findSectionsForCourse(courseId));
   }
 
 }

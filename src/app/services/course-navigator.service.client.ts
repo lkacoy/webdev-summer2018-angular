@@ -24,4 +24,13 @@ export class CourseNavigatorServiceClient {
       }
     });
   }
+
+  addSection(courseId, section) {
+    return fetch('http://localhost:4000/api/course/'+ courseId + '/section', {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+  }
 }
