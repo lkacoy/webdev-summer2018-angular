@@ -18,12 +18,15 @@
         <li *ngFor="let section of sections"
             class="list-group-item">
           {{section.name}}
-          <span class="pull-right"><i class="fa fa-trash"></i></span>
+          <span class="pull-right"><i class="fa fa-trash" (click)="removeSection(section._id)"></i></span>
         </li>
         <li class="list-group-item">
           <i class="fa fa-plus"></i>
         </li>
       </ul>
+    </div>
+    <div class="col-6">
+      <app-section-list></app-section-list>
     </div>
   </div>
 

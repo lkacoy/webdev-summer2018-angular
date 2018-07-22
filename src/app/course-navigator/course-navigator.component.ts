@@ -29,4 +29,8 @@ export class CourseNavigatorComponent implements OnInit {
       .then(sections => this.sections = sections);
   }
 
+  removeSection(sectionId) {
+    console.log(sectionId);
+  }
+
 }
