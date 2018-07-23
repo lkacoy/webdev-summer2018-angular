@@ -31,7 +31,10 @@ export class ProfileComponent implements OnInit {
     this.user.firstName = this.firstName;
     this.user.lastName = this.lastName;
     this.service.updateUser(this.user)
-      .then(user => this.user = user);
+      .then(user => {
+        this.user = user;
+        this.router.navigateByUrl('/profile');
+      });
   }
 
   logout() {
@@ -47,7 +50,9 @@ export class ProfileComponent implements OnInit {
       .profile()
       .then(user => {
           this.username = user.username;
-          console.log(user);
+          this.email  = user.email;
+          this.firstName = user.firstName;
+          this.lastName = user.lastName;
           if (user.isAdmin) this.isAdmin = user.isAdmin;
       });
 
