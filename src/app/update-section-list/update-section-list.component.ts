@@ -25,6 +25,7 @@ export class UpdateSectionListComponent implements OnInit {
 
 
   loadSectionInfo(courseId, sectionId) {
+    this.courseId = courseId;
     this
       .service
       .findSectionInfo(sectionId)
