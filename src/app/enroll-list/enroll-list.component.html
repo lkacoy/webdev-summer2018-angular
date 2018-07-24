@@ -1,3 +1,10 @@
-<p>
-  enroll-list works!
-</p>
+<div class="mt-4 mb-4">
+  <h2>Enrolled Sections ({{sections.length}})</h2>
+  <ul class="list-group">
+    <li *ngFor="let enrollment of sections" class="list-group-item">
+      {{enrollment.section.name}}
+      ({{enrollment.section.seats}})
+    </li>
+  </ul>
+</div>
+

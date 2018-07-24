@@ -18,15 +18,7 @@
     Update
   </button>
 
-  <h2>Sections ({{sections.length}})</h2>
-
-  <ul class="list-group">
-    <li *ngFor="let enrollment of sections" class="list-group-item">
-      {{enrollment.section.name}}
-      ({{enrollment.section.seats}})
-    </li>
-  </ul>
-
+  <app-enroll-list></app-enroll-list>
   <a (click)="logout()">Logout</a>
   <a routerLink="/home" class="ml-2">Home</a>
   <a routerLink="/admin" class="ml-2" [hidden]="!this.isAdmin">Admin</a>

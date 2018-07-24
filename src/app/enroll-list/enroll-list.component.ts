@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SectionServiceClient} from "../services/section.service.client";
 
 @Component({
   selector: 'app-enroll-list',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnrollListComponent implements OnInit {
 
-  constructor() { }
+  sections = [];
+
+  constructor(private sectionService: SectionServiceClient,) { }
 
   ngOnInit() {
+    this.sectionService
+      .findSectionsForStudent()
+      .then(sections => {
+        console.log(sections);
+        this.sections = sections
+      } );
   }
 
 }
