@@ -13,6 +13,7 @@ export class UpdateSectionListComponent implements OnInit {
   sectionName = '';
   seats = '';
   courseId = '';
+  sectionId = '';
 
   constructor(private service: SectionServiceClient,
               private route: ActivatedRoute) {
@@ -26,6 +27,7 @@ export class UpdateSectionListComponent implements OnInit {
 
   loadSectionInfo(courseId, sectionId) {
     this.courseId = courseId;
+    this.sectionId = sectionId;
     this
       .service
       .findSectionInfo(sectionId)
@@ -36,7 +38,8 @@ export class UpdateSectionListComponent implements OnInit {
   }
 
   updateSection(sectionName, seats) {
-
+    this.service.updateSection(this.sectionId, this.courseId, sectionName, seats)
+      .then(() => this.loadSectionInfo(this.courseId, this.sectionId));
   }
 
 }

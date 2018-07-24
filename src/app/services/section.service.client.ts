@@ -1,6 +1,7 @@
 export class SectionServiceClient {
 
   SECTION_URL = 'http://localhost:4000/api/course/COURSEID/section';
+  UPDATE_SECTION_URL = 'http://localhost:4000/api/section/SECTIONID';
 
   findSectionsForStudent() {
     const url = 'http://localhost:4000/api/student/section';
@@ -27,6 +28,18 @@ export class SectionServiceClient {
     const section = {courseId, name, seats};
     return fetch(this.SECTION_URL.replace('COURSEID', courseId), {
       method: 'post',
+      body: JSON.stringify(section),
+      credentials: 'include',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(response => response.json());
+  }
+
+  updateSection(courseId, name, seats, sectionId) {
+    const section = {sectionId, courseId, name, seats};
+    return fetch(this.UPDATE_SECTION_URL.replace('SECTIONID', sectionId), {
+      method: 'put',
       body: JSON.stringify(section),
       credentials: 'include',
       headers: {
