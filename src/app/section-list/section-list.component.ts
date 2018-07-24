@@ -28,7 +28,7 @@ export class SectionListComponent implements OnInit {
       .service
       .createSection(this.courseId, sectionName, seats)
       .then((section) => {
-        this.router.navigateByUrl('admin/course/'+this.courseId+'section/'+section._id);
+        this.router.navigateByUrl('admin/course/'+this.courseId+'/section/'+section._id);
       });
   }
 
