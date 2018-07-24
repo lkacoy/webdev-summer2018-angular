@@ -25,6 +25,7 @@ import { SectionListComponent } from './section-list/section-list.component';
 import {SectionServiceClient} from "./services/section.service.client";
 import { EnrollComponent } from './enroll/enroll.component';
 import { UpdateSectionListComponent } from './update-section-list/update-section-list.component';
+import { EnrollListComponent } from './enroll-list/enroll-list.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { UpdateSectionListComponent } from './update-section-list/update-section
     ProfileComponent,
     SectionListComponent,
     EnrollComponent,
-    UpdateSectionListComponent
+    UpdateSectionListComponent,
+    EnrollListComponent
   ],
   imports: [
     BrowserModule,
