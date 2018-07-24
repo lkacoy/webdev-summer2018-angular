@@ -36,7 +36,7 @@ export class SectionServiceClient {
     }).then(response => response.json());
   }
 
-  updateSection(courseId, name, seats, sectionId) {
+  updateSection(sectionId, courseId, name, seats) {
     const section = {sectionId, courseId, name, seats};
     return fetch(this.UPDATE_SECTION_URL.replace('SECTIONID', sectionId), {
       method: 'put',
