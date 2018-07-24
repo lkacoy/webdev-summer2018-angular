@@ -19,6 +19,7 @@ export class CourseNavigatorComponent implements OnInit {
   sections = [];
   courseId;
   sectionId;
+  updateSection = true;
 
 
   ngOnInit() {
@@ -63,8 +64,10 @@ export class CourseNavigatorComponent implements OnInit {
 
   addSection(courseId) {
     var section = {name: courseId, courseId: courseId};
-    this.service.addSection(courseId, section)
-      .then(() => this.findSectionsForCourse(courseId));
+    console.log(section);
+    this.updateSection = false;
+/*    this.service.addSection(courseId, section)
+      .then(() => this.findSectionsForCourse(courseId));*/
   }
 
 }

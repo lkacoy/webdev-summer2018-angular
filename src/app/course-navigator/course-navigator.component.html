@@ -25,7 +25,10 @@
         </li>
       </ul>
     </div>
-    <div class="col-6">
+    <div class="col-6" [hidden]="!updateSection">
+      Update Sections
+    </div>
+    <div class="col-6" [hidden]="updateSection">
       <app-section-list></app-section-list>
     </div>
   </div>

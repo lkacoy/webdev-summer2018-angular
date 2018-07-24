@@ -27,6 +27,7 @@ export class CourseNavigatorServiceClient {
 
   addSection(courseId, section) {
     return fetch('http://localhost:4000/api/course/'+ courseId + '/section', {
+      body: JSON.stringify(section),
       method: 'post',
       headers: {
         'content-type': 'application/json'
