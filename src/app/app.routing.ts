@@ -15,6 +15,7 @@ const appRoutes:Routes = [
   { path: 'profile', component: ProfileComponent},
   { path: 'admin', component: CourseNavigatorComponent},
   { path: 'admin/course/:courseId', component: CourseNavigatorComponent},
+  { path: 'admin/course/:courseId/add', component: CourseNavigatorComponent},
   { path: 'admin/course/:courseId/section/:sectionId', component: CourseNavigatorComponent },
   { path: 'course/:courseId/enroll', component: EnrollComponent},
   { path: 'course/:courseId', component: CourseViewerComponent },

@@ -10,30 +10,26 @@ import {SectionServiceClient} from "../services/section.service.client";
 export class SectionListComponent implements OnInit {
 
   constructor(private service: SectionServiceClient,
-              private route: ActivatedRoute) {
-    this.route.params.subscribe(params => this.loadSectionInfo(params['courseId'], params['sectionId']))
+              private route: ActivatedRoute,
+              private router:Router) {
+    this.route.params.subscribe(params => this.setParams(params['courseId']))
   }
 
   sectionName = '';
   seats = '';
   courseId = '';
 
-  loadSectionInfo(courseId, sectionId) {
-    this
-      .service
-      .findSectionInfo(sectionId)
-      .then(section => {
-        this.sectionName = section.name;
-        this.seats = section.seats;
-      });
+  setParams(courseId) {
+    this.courseId = courseId;
   }
 
   createSection(sectionName, seats) {
     this
       .service
       .createSection(this.courseId, sectionName, seats)
-      .then(() => {
-        this.loadSectionInfo(this.courseId, this.route.params['sectionId']);
+      .then((section) => {
+        this.setParams(this.courseId);
+        this.router.navigateByUrl('admin/course/'+this.courseId+'section/'+section._id);
       });
   }
 

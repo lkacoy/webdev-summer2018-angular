@@ -32,7 +32,7 @@ export class SectionServiceClient {
       headers: {
         'content-type': 'application/json'
       }
-    });
+    }).then(response => response.json());
   }
 
   findSectionInfo(sectionId) {
