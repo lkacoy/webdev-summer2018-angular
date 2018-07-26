@@ -26,6 +26,7 @@ import {SectionServiceClient} from "./services/section.service.client";
 import { EnrollComponent } from './enroll/enroll.component';
 import { UpdateSectionListComponent } from './update-section-list/update-section-list.component';
 import { EnrollListComponent } from './enroll-list/enroll-list.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { EnrollListComponent } from './enroll-list/enroll-list.component';
     SectionListComponent,
     EnrollComponent,
     UpdateSectionListComponent,
-    EnrollListComponent
+    EnrollListComponent,
+    TrueFalseQuestionComponent
   ],
   imports: [
     BrowserModule,
