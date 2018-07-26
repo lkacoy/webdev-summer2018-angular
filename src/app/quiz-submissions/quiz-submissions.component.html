@@ -1,9 +1,14 @@
 <div class="container-fluid">
   <h2>Submissions</h2>
 
-  <ul class="list-group">
+  <ul class="list-group" *ngIf="submissions.length > 0; else noSubmissions">
     <li *ngFor="let submission of submissions" class="list-group-item">
       {{submission.username}}
     </li>
   </ul>
+  <ng-template #noSubmissions>
+    <div>
+      There have been no submissions for this quiz yet.
+    </div>
+  </ng-template>
 </div>
