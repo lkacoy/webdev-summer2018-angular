@@ -32,6 +32,7 @@ import { MultipleChoiceQuestionComponent } from './multiple-choice-question/mult
 import { FillInBlankQuestionComponent } from './fill-in-blank-question/fill-in-blank-question.component';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { QuizSubmissionsComponent } from './quiz-submissions/quiz-submissions.component';
+import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { QuizSubmissionsComponent } from './quiz-submissions/quiz-submissions.co
     MultipleChoiceQuestionComponent,
     FillInBlankQuestionComponent,
     QuizListComponent,
-    QuizSubmissionsComponent
+    QuizSubmissionsComponent,
+    QuizAnswersComponent
   ],
   imports: [
     BrowserModule,
