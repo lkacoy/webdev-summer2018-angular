@@ -28,6 +28,7 @@ import { UpdateSectionListComponent } from './update-section-list/update-section
 import { EnrollListComponent } from './enroll-list/enroll-list.component';
 import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
 import { EssayQuestionComponent } from './essay-question/essay-question.component';
+import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { EssayQuestionComponent } from './essay-question/essay-question.componen
     UpdateSectionListComponent,
     EnrollListComponent,
     TrueFalseQuestionComponent,
-    EssayQuestionComponent
+    EssayQuestionComponent,
+    MultipleChoiceQuestionComponent
   ],
   imports: [
     BrowserModule,
