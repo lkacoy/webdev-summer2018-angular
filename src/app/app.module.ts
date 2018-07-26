@@ -34,6 +34,7 @@ import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { QuizSubmissionsComponent } from './quiz-submissions/quiz-submissions.component';
 import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
 import {QuizServiceClient} from "./services/quiz.service.client";
+import { QuizTakerComponent } from './quiz-taker/quiz-taker.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {QuizServiceClient} from "./services/quiz.service.client";
     FillInBlankQuestionComponent,
     QuizListComponent,
     QuizSubmissionsComponent,
-    QuizAnswersComponent
+    QuizAnswersComponent,
+    QuizTakerComponent
   ],
   imports: [
     BrowserModule,

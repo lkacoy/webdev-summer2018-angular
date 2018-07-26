@@ -19,14 +19,14 @@ export class QuizListComponent implements OnInit {
   lessonId;
   ngOnInit() {
 
-    this.service.findAllQuizzesForLesson(372)
+    this.service.findAllQuizzesForLesson(this.lessonId)
       .then(quizzes => this.quizzes = quizzes);
     this.router.navigateByUrl('/quizzes');
+    console.log(this.quizzes);
   }
 
   setParams(params) {
     this.lessonId = params['lessonId'];
-    console.log(this.lessonId);
   }
 
 }

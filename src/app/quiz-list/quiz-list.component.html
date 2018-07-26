@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h2>Quizzes</h2>
 
-  <ul class="list-group">
+  <ul class="list-group" *ngIf="quizzes.length > 0">
     <li *ngFor="let quiz of quizzes" class="list-group-item">
       {{quiz.name}}
 
