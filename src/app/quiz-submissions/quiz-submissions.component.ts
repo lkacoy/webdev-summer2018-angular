@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {QuizServiceClient} from "../services/quiz.service.client";
 
 @Component({
   selector: 'app-quiz-submissions',
@@ -7,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizSubmissionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: QuizServiceClient,
+              private aRoute: ActivatedRoute) {
+    this.aRoute.params.subscribe(params =>
+      this.loadSubmissions(params['quizId']));
+  }
+
+  quizId = '';
+  submissions = [];
+  loadSubmissions(quizId) {
+    this.quizId = quizId;
+    this.service.loadSubmissions(this.quizId)
+      .then(submissions => this.submissions = submissions);
+  }
 
   ngOnInit() {
   }

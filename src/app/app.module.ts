@@ -33,6 +33,7 @@ import { FillInBlankQuestionComponent } from './fill-in-blank-question/fill-in-b
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { QuizSubmissionsComponent } from './quiz-submissions/quiz-submissions.component';
 import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
+import {QuizServiceClient} from "./services/quiz.service.client";
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
     LessonServiceClient,
     WidgetServiceClient,
     UserServiceClient,
-    SectionServiceClient
+    SectionServiceClient,
+    QuizServiceClient
   ],
   bootstrap: [AppComponent]
 })

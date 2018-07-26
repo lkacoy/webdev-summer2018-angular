@@ -39,7 +39,7 @@ export class LessonTabsComponent implements OnInit {
   }
 
   getQuizzesForLesson() {
-    this.router.navigateByUrl('/quizzes', this.lessonId);
+    this.router.navigate(['/quizzes', {lessonId: this.lessonId}]);
   }
 
 }
