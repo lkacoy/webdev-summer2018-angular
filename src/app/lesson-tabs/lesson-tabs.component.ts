@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {LessonServiceClient} from "../services/lesson.service.client";
 
 @Component({
@@ -10,7 +10,8 @@ import {LessonServiceClient} from "../services/lesson.service.client";
 export class LessonTabsComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,
-              private lessonService:LessonServiceClient) {
+              private lessonService:LessonServiceClient,
+              private router:Router) {
     this.route.params.subscribe( params => this.setParams(params));
   }
 
@@ -35,6 +36,10 @@ export class LessonTabsComponent implements OnInit {
       this.lessonService.findLessonsForModule(moduleId)
         .then(lessons => this.lessons = lessons);
     }
+  }
+
+  getQuizzesForLesson() {
+    this.router.navigateByUrl('/quizzes', this.lessonId);
   }
 
 }

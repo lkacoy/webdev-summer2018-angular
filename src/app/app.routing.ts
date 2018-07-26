@@ -6,6 +6,7 @@ import {RegisterComponent} from "./register/register.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {EnrollComponent} from "./enroll/enroll.component";
 import {CourseNavigatorComponent} from "./course-navigator/course-navigator.component";
+import {QuizListComponent} from "./quiz-list/quiz-list.component";
 
 const appRoutes:Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +14,7 @@ const appRoutes:Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'profile', component: ProfileComponent},
+  { path: 'quizzes', component: QuizListComponent},
   { path: 'admin', component: CourseNavigatorComponent},
   { path: 'admin/course/:courseId', component: CourseNavigatorComponent},
   { path: 'admin/course/:courseId/add', component: CourseNavigatorComponent},
