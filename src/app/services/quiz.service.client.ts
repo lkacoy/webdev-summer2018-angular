@@ -23,4 +23,9 @@ export class QuizServiceClient {
     return fetch('https://web2018-lexikacoyannakis.herokuapp.com/api/lesson/' + lessonId + '/exam')
       .then(response => response.json());
   }
+
+  findAllQuestionsForQuiz(quizId) {
+    return fetch('https://web2018-lexikacoyannakis.herokuapp.com/api/exam/' + quizId + '/question')
+      .then(response => response.json());
+  }
 }

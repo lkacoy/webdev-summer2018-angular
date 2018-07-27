@@ -9,16 +9,24 @@ import {QuizServiceClient} from "../services/quiz.service.client";
 })
 export class QuizTakerComponent implements OnInit {
 
+  quizId = '';
+  quiz = {};
+  submission = {};
+  questions = []; //TODO: make this attach to the quiz object by creating a model
+
   constructor(private service: QuizServiceClient,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute
       .params
       .subscribe(params => this.loadQuiz(params['quizId']));
+
+    if (this.quizId && this.quizId !== null) {
+      this.service.findAllQuestionsForQuiz(this.quizId)
+        .then(questions => this.questions = questions);
+    }
   }
 
-  quizId = '';
-  quiz = {};
-  submission = {};
+
   loadQuiz(quizId) {
     this.quizId = quizId;
     this.service
