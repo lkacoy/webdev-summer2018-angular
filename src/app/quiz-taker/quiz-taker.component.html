@@ -2,19 +2,24 @@
   <h2>Quiz: {{quizId}}</h2>
   <ul class="list-group">
     <li *ngFor="let question of questions" class="list-group-item">
-      <div [ngSwitch]="question.type">
-        <div *ngSwitchCase="quiz.essay">
-          <h1>Essay Question</h1>
+      <div [ngSwitch]="determineQuestionType(question)">
+        <div *ngSwitchCase="'essay'">
+          <h1>{{question.title}}</h1>
+          <h3>{{question.description}}</h3>
           <textarea [(ngModel)]="submission[question.id]" class="form-control"></textarea>
         </div>
         <div *ngSwitchCase="'trueFalse'">
-
+          <h1>{{question.title}}</h1>
+          <h3>{{question.description}}</h3>
         </div>
         <div *ngSwitchCase="'multipleChoice'">
+          <h1>{{question.title}}</h1>
+          <h3>{{question.description}}</h3>
 
         </div>
         <div *ngSwitchCase="'fillInBlanks'">
-
+          <h1>{{question.title}}</h1>
+          <h3>{{question.description}}</h3>
         </div>
       </div>
     </li>

@@ -42,4 +42,18 @@ export class QuizTakerComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  determineQuestionType(question) {
+    if (question.essay) {
+      return 'essay';
+    } else if (question.options) {
+      return 'multipleChoice';
+    } else if (question.variables) {
+      return 'fillInBlanks';
+    } else {
+      return 'trueFalse';
+    }
+  }
+
+
 }
