@@ -16,7 +16,7 @@ export class QuizServiceClient {
       .then(response => response.json());
   }
   findQuizById(quizId) {
-    return fetch('http://localhost:4000/api/quiz/' + quizId)
+    return fetch('https://web2018-lexikacoyannakis.herokuapp.com/api/exam/' + quizId)
       .then(response => response.json());
   }
   findAllQuizzesForLesson(lessonId) {

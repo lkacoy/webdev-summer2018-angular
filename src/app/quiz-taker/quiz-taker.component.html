@@ -1,12 +1,12 @@
 <div class="container-fluid">
-  <h2>Quiz: {{quizId}}</h2>
+  <h2>{{quiz.name}}</h2>
   <ul class="list-group">
-    <li *ngFor="let question of questions" class="list-group-item">
+    <li *ngFor="let question of questions" class="list-group-item mb-2">
       <div [ngSwitch]="determineQuestionType(question)">
         <div *ngSwitchCase="'essay'">
-          <h1>{{question.title}}</h1>
-          <h3>{{question.description}}</h3>
-          <textarea [(ngModel)]="submission[question.id]" class="form-control"></textarea>
+          <h3>{{question.title}}</h3>
+          <h4>{{question.description}}</h4> <br/>
+          <textarea [(ngModel)]='submission[question.id]' class="form-control" rows="4" cols="50"></textarea>
         </div>
         <div *ngSwitchCase="'trueFalse'">
           <h1>{{question.title}}</h1>
