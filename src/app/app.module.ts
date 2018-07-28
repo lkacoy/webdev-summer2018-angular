@@ -26,10 +26,6 @@ import {SectionServiceClient} from "./services/section.service.client";
 import { EnrollComponent } from './enroll/enroll.component';
 import { UpdateSectionListComponent } from './update-section-list/update-section-list.component';
 import { EnrollListComponent } from './enroll-list/enroll-list.component';
-import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
-import { EssayQuestionComponent } from './essay-question/essay-question.component';
-import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
-import { FillInBlankQuestionComponent } from './fill-in-blank-question/fill-in-blank-question.component';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { QuizSubmissionsComponent } from './quiz-submissions/quiz-submissions.component';
 import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
@@ -55,10 +51,6 @@ import {FilterPipe} from "./filter.pipe";
     EnrollComponent,
     UpdateSectionListComponent,
     EnrollListComponent,
-    TrueFalseQuestionComponent,
-    EssayQuestionComponent,
-    MultipleChoiceQuestionComponent,
-    FillInBlankQuestionComponent,
     QuizListComponent,
     QuizSubmissionsComponent,
     QuizAnswersComponent,
