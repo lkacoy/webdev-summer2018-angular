@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h2>Submissions</h2>
 
-  <input [(ngModel)]="searchText" placeholder="enter username here">
+  <label class="font-weight-bold mr-2 mb-4">Search by username</label><input [(ngModel)]="searchText" placeholder="enter username here">
 
   <table class="table table-bordered table-striped"  *ngIf="submissions.length > 0; else noSubmissions">
     <tr>
