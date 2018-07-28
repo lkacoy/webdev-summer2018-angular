@@ -34,7 +34,7 @@
         </div>
         <div *ngSwitchCase="'fillInBlanks'">
           <h3>{{question.title}}</h3>
-          <div [innerHtml]="determineBlanksQuestion(question)"></div>
+          <div [innerHtml]="determineBlanksQuestion(question) | noSanitize"></div>
         </div>
       </div>
     </li>
