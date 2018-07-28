@@ -4,6 +4,7 @@
   <ul class="list-group" *ngIf="submissions.length > 0; else noSubmissions">
     <li *ngFor="let submission of submissions" class="list-group-item">
       {{submission.username}}
+      <span class="pull-right">{{submission.timeSubmitted | date:'medium'}}</span>
     </li>
   </ul>
   <a routerLink="/">Home</a>
