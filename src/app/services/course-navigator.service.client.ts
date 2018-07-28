@@ -12,12 +12,12 @@ export class CourseNavigatorServiceClient {
   }
 
   findAllSectionsForCourse(courseId) {
-    return fetch('http://localhost:4000/api/course/' + courseId+ '/section')
+    return fetch('https://node-lexikacoyannakis.herokuapp.com/api/course/' + courseId+ '/section')
       .then(response => response.json());
   }
 
   removeSection(sectionId) {
-    return fetch('http://localhost:4000/api/section/' + sectionId, {
+    return fetch('https://node-lexikacoyannakis.herokuapp.com/api/section/' + sectionId, {
       method: 'delete',
       headers: {
         'content-type': 'application/json'
@@ -26,7 +26,7 @@ export class CourseNavigatorServiceClient {
   }
 
   addSection(courseId, section) {
-    return fetch('http://localhost:4000/api/course/'+ courseId + '/section', {
+    return fetch('https://node-lexikacoyannakis.herokuapp.com/course/'+ courseId + '/section', {
       body: JSON.stringify(section),
       method: 'post',
       headers: {

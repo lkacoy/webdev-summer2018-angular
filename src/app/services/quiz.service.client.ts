@@ -1,12 +1,12 @@
 export class QuizServiceClient {
 
   loadSubmissions(quizId) {
-    return fetch('http://localhost:4000/api/quiz/' + quizId + '/submissions')
+    return fetch('https://node-lexikacoyannakis.herokuapp.com/api/quiz/' + quizId + '/submissions')
       .then(response => response.json());
   }
 
   submitQuiz(quiz, quizId) {
-    return fetch('http://localhost:4000/api/quiz/' + quizId,{
+    return fetch('https://node-lexikacoyannakis.herokuapp.com/api/quiz/' + quizId,{
       method: 'post',
       body: JSON.stringify(quiz),
       credentials: 'include',
@@ -31,7 +31,7 @@ export class QuizServiceClient {
   }
 
   findQuizAnswers(quizId, submissionId) {
-    return fetch('http://localhost:4000/api/quiz/' + quizId + '/submission/' + submissionId, {
+    return fetch('https://node-lexikacoyannakis.herokuapp.com/api/quiz/' + quizId + '/submission/' + submissionId, {
       credentials: 'include',
       headers: {
         'content-type': 'application/json'

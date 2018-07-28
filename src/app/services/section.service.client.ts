@@ -1,10 +1,10 @@
 export class SectionServiceClient {
 
-  SECTION_URL = 'http://localhost:4000/api/course/COURSEID/section';
-  UPDATE_SECTION_URL = 'http://localhost:4000/api/section/SECTIONID';
+  SECTION_URL = 'https://node-lexikacoyannakis.herokuapp.com/api/course/COURSEID/section';
+  UPDATE_SECTION_URL = 'https://node-lexikacoyannakis.herokuapp.com/api/section/SECTIONID';
 
   findSectionsForStudent() {
-    const url = 'http://localhost:4000/api/student/section';
+    const url = 'https://node-lexikacoyannakis.herokuapp.com/api/student/section';
     return fetch(url, {
       credentials: 'include'
     })
@@ -12,7 +12,7 @@ export class SectionServiceClient {
   }
 
   enrollStudentInSection(sectionId) {
-    const url = 'http://localhost:4000/api/section/' + sectionId + '/enrollment';
+    const url = 'https://node-lexikacoyannakis.herokuapp.com/api/section/' + sectionId + '/enrollment';
     return fetch(url, {
       method: 'post',
       credentials: 'include'
@@ -49,7 +49,7 @@ export class SectionServiceClient {
   }
 
   findSectionInfo(sectionId) {
-    return fetch('http://localhost:4000/api/section/' + sectionId)
+    return fetch('https://node-lexikacoyannakis.herokuapp.com/api/section/' + sectionId)
       .then(response => response.json());
   }
 }
