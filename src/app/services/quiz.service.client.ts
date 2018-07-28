@@ -9,6 +9,7 @@ export class QuizServiceClient {
     return fetch('http://localhost:4000/api/quiz/' + quizId,{
       method: 'post',
       body: JSON.stringify(quiz),
+      credentials: 'include',
       headers: {
         'content-type': 'application/json'
       }

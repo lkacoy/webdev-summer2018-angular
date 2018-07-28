@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Route, Router} from "@angular/router";
 import {QuizServiceClient} from "../services/quiz.service.client";
+import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-quiz-taker',
@@ -39,9 +40,17 @@ export class QuizTakerComponent implements OnInit {
       .then(quiz => this.quiz = quiz);
   }
   submit(submission) {
-    console.log(this.submission);/*
+    alert('Once submitted, your answers can not be changed. Are you sure you wish to submit?');
     this.service
-      .submitQuiz(this.submission, this.quizId);*/
+      .submitQuiz(this.submission, this.quizId)
+      .then(quiz => {
+        if (quiz._id) {
+          alert('Your quiz has been submitted');
+          this.router.navigateByUrl('/');
+        } else {
+          alert('There was an error submitting your quiz. Please try again');
+        }
+      });
   }
 
   cancel() {
@@ -66,5 +75,17 @@ export class QuizTakerComponent implements OnInit {
     }
   }
 
+  determineBlanksQuestion(blanks) {
+    if (blanks.description) {
+      var variable = blanks.description.substring(blanks.description.indexOf('['), blanks.description.indexOf(']') + 1);
+      var html = '<input type="text" [(ngModel)]=\'submission[question.id]\'/>';
+      var question = '<p>' + blanks.description.replace(variable, html) + '</p>';
+      console.log(question);
+      return question;
+    }
+    else {
+      return '';
+    }
+  }
 
 }
