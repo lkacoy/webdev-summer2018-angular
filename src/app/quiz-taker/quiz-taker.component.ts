@@ -78,9 +78,8 @@ export class QuizTakerComponent implements OnInit {
   determineBlanksQuestion(blanks) {
     if (blanks.description) {
       var variable = blanks.description.substring(blanks.description.indexOf('['), blanks.description.indexOf(']') + 1);
-      var html = '<input type="text" [(ngModel)]=\'submission[question.id]\'/>';
+      var html = '<input type="text" [(ngModel)]="submission[blanks.id]"/>';
       var question = '<p>' + blanks.description.replace(variable, html) + '</p>';
-      console.log(question);
       return question;
     }
     else {
