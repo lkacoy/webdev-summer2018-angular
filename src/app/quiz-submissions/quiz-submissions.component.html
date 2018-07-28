@@ -1,13 +1,15 @@
 <div class="container-fluid">
   <h2>Submissions</h2>
 
+  <input [(ngModel)]="searchText" placeholder="enter username here">
+
   <table class="table table-bordered table-striped"  *ngIf="submissions.length > 0; else noSubmissions">
     <tr>
       <th scope="col">Username</th>
       <th scope="col">Time Submitted</th>
       <th scope="col">View Submission</th>
     </tr>
-    <tr *ngFor="let submission of submissions">
+    <tr *ngFor="let submission of submissions | filter : searchText">
       <td>
         {{submission.username}}
       </td>
