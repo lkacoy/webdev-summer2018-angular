@@ -16,16 +16,10 @@
           <h1>{{question.title}}</h1>
           <h3>{{question.description}}</h3>
           <div class="form-group">
-            <div class="radio">
+            <div class="radio" *ngFor="let item of question.options.split('\n')">
               <label>
-                <input type="radio" name="chickenEgg" value="chicken" ng-model="formData.chickenEgg">
-                Chicken
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="chickenEgg" value="egg" ng-model="formData.chickenEgg">
-                Egg
+                <input type="radio" name="item" value="item">
+                {{item}}
               </label>
             </div>
           </div>
