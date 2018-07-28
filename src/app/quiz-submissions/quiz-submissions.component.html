@@ -1,12 +1,24 @@
 <div class="container-fluid">
   <h2>Submissions</h2>
 
-  <ul class="list-group" *ngIf="submissions.length > 0; else noSubmissions">
-    <li *ngFor="let submission of submissions" class="list-group-item">
-      {{submission.username}}
-      <span class="pull-right">{{submission.timeSubmitted | date:'medium'}}</span>
-    </li>
-  </ul>
+  <table class="table table-bordered table-striped"  *ngIf="submissions.length > 0; else noSubmissions">
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">Time Submitted</th>
+      <th scope="col">View Submission</th>
+    </tr>
+    <tr *ngFor="let submission of submissions">
+      <td>
+        {{submission.username}}
+      </td>
+      <td>
+        {{submission.timeSubmitted | date:'medium'}}
+      </td>
+      <td>
+        <button class="btn btn-info">View</button>
+      </td>
+    </tr>
+  </table>
   <a routerLink="/">Home</a>
   <ng-template #noSubmissions>
     <div>
