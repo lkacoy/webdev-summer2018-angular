@@ -20,7 +20,7 @@ const appRoutes:Routes = [
   { path: 'quizzes', component: QuizListComponent},
   { path: 'quiz/:quizId', component: QuizTakerComponent},
   { path: 'quiz/:quizId/submissions', component: QuizSubmissionsComponent},
-  { path: 'quiz/:quizId/submissions/:submissionId', component: QuizAnswersComponent},
+  { path: 'quiz/:quizId/submission/:submissionId', component: QuizAnswersComponent},
   { path: 'admin', component: CourseNavigatorComponent},
   { path: 'admin/course/:courseId', component: CourseNavigatorComponent},
   { path: 'admin/course/:courseId/add', component: CourseNavigatorComponent},
