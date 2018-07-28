@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Route} from "@angular/router";
+import {ActivatedRoute, Route, Router} from "@angular/router";
 import {QuizServiceClient} from "../services/quiz.service.client";
 
 @Component({
@@ -15,7 +15,8 @@ export class QuizTakerComponent implements OnInit {
   questions = []; //TODO: make this attach to the quiz object by creating a model
 
   constructor(private service: QuizServiceClient,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private router:Router) {
     this.activatedRoute
       .params
       .subscribe(params => this.loadQuiz(params['quizId']));
@@ -38,6 +39,12 @@ export class QuizTakerComponent implements OnInit {
     this.service
       .submitQuiz(this.submission, this.quizId);
   }
+
+  cancel() {
+    alert('Your answers will not be saved. Are you sure you wish to exit?');
+    this.router.navigateByUrl('/');
+  }
+
 
   ngOnInit() {
   }

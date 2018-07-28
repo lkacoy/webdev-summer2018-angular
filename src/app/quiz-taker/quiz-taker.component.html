@@ -15,7 +15,20 @@
         <div *ngSwitchCase="'multipleChoice'">
           <h1>{{question.title}}</h1>
           <h3>{{question.description}}</h3>
-
+          <div class="form-group">
+            <div class="radio">
+              <label>
+                <input type="radio" name="chickenEgg" value="chicken" ng-model="formData.chickenEgg">
+                Chicken
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="chickenEgg" value="egg" ng-model="formData.chickenEgg">
+                Egg
+              </label>
+            </div>
+          </div>
         </div>
         <div *ngSwitchCase="'fillInBlanks'">
           <h1>{{question.title}}</h1>
@@ -24,5 +37,6 @@
       </div>
     </li>
   </ul>
-  <button class="btn btn-success" (click)="submit(submission)">Submit</button>
+  <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+  <button class="btn btn-success ml-2" (click)="submit(submission)">Submit</button>
 </div>
