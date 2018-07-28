@@ -9,6 +9,7 @@ import {CourseNavigatorComponent} from "./course-navigator/course-navigator.comp
 import {QuizListComponent} from "./quiz-list/quiz-list.component";
 import {QuizSubmissionsComponent} from "./quiz-submissions/quiz-submissions.component";
 import {QuizTakerComponent} from "./quiz-taker/quiz-taker.component";
+import {QuizAnswersComponent} from "./quiz-answers/quiz-answers.component";
 
 const appRoutes:Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const appRoutes:Routes = [
   { path: 'quizzes', component: QuizListComponent},
   { path: 'quiz/:quizId', component: QuizTakerComponent},
   { path: 'quiz/:quizId/submissions', component: QuizSubmissionsComponent},
+  { path: 'quiz/:quizId/submissions/:submissionId', component: QuizAnswersComponent},
   { path: 'admin', component: CourseNavigatorComponent},
   { path: 'admin/course/:courseId', component: CourseNavigatorComponent},
   { path: 'admin/course/:courseId/add', component: CourseNavigatorComponent},
