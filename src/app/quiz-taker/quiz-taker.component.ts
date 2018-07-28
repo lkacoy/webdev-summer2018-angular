@@ -13,6 +13,10 @@ export class QuizTakerComponent implements OnInit {
   quiz = {};
   submission = {};
   questions = []; //TODO: make this attach to the quiz object by creating a model
+  trueFalse = [
+    "True",
+    "False"
+  ]
 
   constructor(private service: QuizServiceClient,
               private activatedRoute: ActivatedRoute,
@@ -35,9 +39,9 @@ export class QuizTakerComponent implements OnInit {
       .then(quiz => this.quiz = quiz);
   }
   submit(submission) {
-    console.log(this.submission);
+    console.log(this.submission);/*
     this.service
-      .submitQuiz(this.submission, this.quizId);
+      .submitQuiz(this.submission, this.quizId);*/
   }
 
   cancel() {

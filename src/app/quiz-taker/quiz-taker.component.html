@@ -11,17 +11,11 @@
         <div *ngSwitchCase="'trueFalse'">
           <h3>{{question.title}}</h3>
           <p>{{question.description}}</p>
-          <div class="form-group">
-            <div class="checkbox">
+          <div class="form-group" [(ngModel)]='submission[question.id]'>
+            <div class="radio" *ngFor="let item of trueFalse">
               <label>
-                <input type="checkbox" value="1">
-                True
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="0">
-                False
+                <input type="radio" name="tfQuestion" value="{{item}}">
+                {{item}}
               </label>
             </div>
           </div>
@@ -29,10 +23,10 @@
         <div *ngSwitchCase="'multipleChoice'">
           <h3>{{question.title}}</h3>
           <p>{{question.description}}</p>
-          <div class="form-group">
+          <div class="form-group" [(ngModel)]='submission[question.id]'>
             <div class="radio" *ngFor="let item of question.options.split('\n')">
               <label>
-                <input type="radio" name="item" value="item">
+                <input type="radio" name="mcQuestion" value="{{item}}">
                 {{item}}
               </label>
             </div>
