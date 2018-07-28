@@ -29,4 +29,13 @@ export class QuizServiceClient {
     return fetch('https://web2018-lexikacoyannakis.herokuapp.com/api/exam/' + quizId + '/question')
       .then(response => response.json());
   }
+
+  findQuizAnswers(quizId, submissionId) {
+    return fetch('http://localhost:4000/api/quiz/' + quizId + '/submission/' + submissionId, {
+      credentials: 'include',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(response => response.json());
+  }
 }

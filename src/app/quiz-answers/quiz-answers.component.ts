@@ -11,6 +11,8 @@ export class QuizAnswersComponent implements OnInit {
 
   quizId = '';
   submissionId = '';
+  quiz = {};
+  questions = [];
 
   constructor(private service: QuizServiceClient,
               private activatedRoute:ActivatedRoute,
@@ -26,8 +28,16 @@ export class QuizAnswersComponent implements OnInit {
   setParams(params) {
     this.quizId = params['quizId'];
     this.submissionId = params['submissionId'];
-    console.log(this.quizId);
-    console.log(this.submissionId);
+    if (this.quizId && this.submissionId) {
+      this.service.findQuizAnswers(this.quizId, this.submissionId)
+        .then(quiz => {
+          this.quiz = quiz;
+          console.log(this.quiz);
+        });
+
+      this.service.findAllQuestionsForQuiz(this.quizId)
+        .then(questions => this.questions = questions);
+    }
   }
 
   backToSubmissions() {
