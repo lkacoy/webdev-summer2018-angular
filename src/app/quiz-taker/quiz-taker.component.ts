@@ -51,14 +51,14 @@ export class QuizTakerComponent implements OnInit {
 
 
   determineQuestionType(question) {
-    if (question.essay) {
-      return 'essay';
-    } else if (question.options) {
+    if (question.options) {
       return 'multipleChoice';
     } else if (question.variables) {
       return 'fillInBlanks';
-    } else {
+    } else if (question.isTrue) {
       return 'trueFalse';
+    } else {
+      return 'essay';
     }
   }
 

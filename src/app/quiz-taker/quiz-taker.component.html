@@ -5,7 +5,7 @@
       <div [ngSwitch]="determineQuestionType(question)">
         <div *ngSwitchCase="'essay'">
           <h3>{{question.title}}</h3>
-          <p>{{question.description}}</p> <br/>
+          <p>{{question.description}}</p>
           <textarea [(ngModel)]='submission[question.id]' class="form-control" rows="4" cols="50"></textarea>
         </div>
         <div *ngSwitchCase="'trueFalse'">
